@@ -1,10 +1,9 @@
-  
 from socket import *
-serverName = 'LAPTOP-0KUL59J7'
+serverName = "127.0.0.1"
 serverPort = 12001
 clientSocket = socket(AF_INET, SOCK_STREAM)
 clientSocket.connect((serverName,serverPort))
-sentence = input("Enter file name")
+sentence = input("Enter file name : ")
 
 clientSocket.send(sentence.encode())
 filecontents = clientSocket.recv(1024).decode()
